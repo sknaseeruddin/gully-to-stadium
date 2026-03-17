@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gully to Stadium</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-header">
+    <div class="header-row">
+      <div class="brand-block">
+        <h1>🏏 Gully to Stadium</h1>
+        <p>Live Cricket Scores & Upcoming Matches</p>
+      </div>
+
+      <div class="header-actions">
+        <button id="refreshLive" class="secondary-btn">🔄 Refresh Live</button>
+        <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="controls">
+      <select id="matchTypeFilter">
+        <option value="">All Types</option>
+        <option value="t20">T20</option>
+        <option value="odi">ODI</option>
+        <option value="test">Test</option>
+      </select>
+
+      <select id="seriesFilter">
+        <option value="">All Series</option>
+      </select>
+
+      <input type="text" id="searchTeam" placeholder="Search team..." />
+
+      <button id="loadMatches">Load Live Matches</button>
+      <button id="loadUpcoming">Load Upcoming Matches</button>
+      <button id="clearSearch" class="secondary-btn">Clear Search</button>
+    </section>
+
+    <section class="status-bar">
+      <p id="message">Click a button to load matches.</p>
+      <p id="lastUpdated"></p>
+    </section>
+
+    <section class="summary-bar">
+      <div class="summary-card">
+        <span class="summary-label">Live Matches</span>
+        <span id="liveCount" class="summary-value">0</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">Upcoming Matches</span>
+        <span id="upcomingCount" class="summary-value">0</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">Search Matches</span>
+        <span id="searchCount" class="summary-value">0</span>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <h2>Live Matches</h2>
+        <span class="section-note">Auto refresh every 60 seconds after load</span>
+      </div>
+      <div id="matches" class="matches">
+        <p class="empty-message">No live matches loaded yet.</p>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <h2>Upcoming Matches</h2>
+        <span class="section-note">Shows scheduled matches</span>
+      </div>
+      <div id="upcomingMatches" class="matches">
+        <p class="empty-message">No upcoming matches loaded yet.</p>
+      </div>
+    </section>
+  </main>
+<div id="matchModal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeModal" class="modal-close">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
