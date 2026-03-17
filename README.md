@@ -1,3 +1,5 @@
+
+![App Screenshot](screenshot.png)
 # 🏏 Gully to Stadium
 
 🚀 A live cricket scores and upcoming matches web application built using HTML, CSS, and JavaScript.
